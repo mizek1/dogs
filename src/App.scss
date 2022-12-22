@@ -7,6 +7,7 @@ $type-second: 'Spectral', Georgia;
 
 body {
   margin: 0px;
+  padding-top: 4rem;
   color: #333;
   font-family: $type-first;
 }
@@ -36,6 +37,10 @@ button {
   font-size: 1rem;
   font-family: $type-first;
   color: #333;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
