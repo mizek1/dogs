@@ -36,3 +36,20 @@ export function USER_GET(token: string) {
     },
   };
 }
+
+export function USER_POST(body: {
+  username: string;
+  password: string;
+  email: string;
+}) {
+  return {
+    url: `${API_URL}/api/user`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
