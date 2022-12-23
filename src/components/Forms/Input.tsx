@@ -5,9 +5,21 @@ export interface InputProps {
   label: string;
   type: string;
   name: string;
+  value: string;
+  error: string | null;
+  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+  onBlur: () => void;
 }
 
-const Input = ({ label, type, name }: InputProps) => {
+const Input = ({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+  error,
+  onBlur,
+}: InputProps) => {
   const id = React.useId();
 
   return (
@@ -15,8 +27,16 @@ const Input = ({ label, type, name }: InputProps) => {
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-      <input id={id} name={name} className={styles.input} type={type} />
-      <p className={styles.error}>Error</p>
+      <input
+        id={id}
+        name={name}
+        className={styles.input}
+        type={type}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+      />
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };
