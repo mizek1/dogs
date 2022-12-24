@@ -1,3 +1,9 @@
+interface PhotosGetType {
+  page: number;
+  total: number;
+  user: string | number;
+}
+
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
 export function TOKEN_POST(body: { username: string; password: string }) {
@@ -63,6 +69,19 @@ export function PHOTO_POST(token: string, formData: FormData) {
         Authorization: `Bearer ${token}`,
       },
       body: formData,
+    },
+  };
+}
+
+export function PHOTOS_GET({ page, total, user }: PhotosGetType): {
+  url: URL | RequestInfo;
+  options: RequestInit;
+} {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
     },
   };
 }
