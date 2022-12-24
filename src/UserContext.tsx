@@ -83,7 +83,7 @@ export const UserStorage = ({ children }: any) => {
 
           await getUser(token);
         } catch (error) {
-          userLogout();
+          await userLogout();
         } finally {
           setLoading(false);
         }
