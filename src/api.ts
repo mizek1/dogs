@@ -85,3 +85,16 @@ export function PHOTOS_GET({ page, total, user }: PhotosGetType): {
     },
   };
 }
+
+export function PHOTO_GET(id: number): {
+  url: URL | RequestInfo;
+  options: RequestInit;
+} {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+}

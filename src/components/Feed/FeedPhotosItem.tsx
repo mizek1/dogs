@@ -1,13 +1,15 @@
+import { FeedModalProps } from './FeedModal';
 import styles from './FeedPhotosItem.module.scss';
-import { Photo } from './types';
 
-interface FeedPhotosItemProps {
-  photo: Photo;
-}
+interface FeedPhotosItemProps extends FeedModalProps {}
 
-const FeedPhotosItem = ({ photo }: FeedPhotosItemProps) => {
+const FeedPhotosItem = ({ photo, setModalPhoto }: FeedPhotosItemProps) => {
+  const handleClick = () => {
+    setModalPhoto(photo);
+  };
+
   return (
-    <li className={styles.photo}>
+    <li className={styles.photo} onClick={handleClick}>
       <img src={photo.src} alt={photo.title} />
       <span className={styles.visualizations}>{photo.acessos}</span>
     </li>
