@@ -3,6 +3,7 @@
 Esse é um projeto feito no curso de React Completo da [ORIGAMID](https://www.origamid.com/curso/react-completo/).
 
 Você pode ver o projeto funcionando clicando [aqui](https://dogs-mizek1.vercel.app/).
+(Pra logar basta usar as credenciais "dog" no usuário e senha).
 
 ## Descrição
 
