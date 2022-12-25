@@ -9,14 +9,15 @@ import { PhotoWithComments } from './types';
 
 interface PhotoContentProps {
   data: PhotoWithComments;
+  single?: boolean;
 }
 
-const PhotoContent = ({ data }: PhotoContentProps) => {
+const PhotoContent = ({ data, single }: PhotoContentProps) => {
   const { userData } = React.useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <Image className={styles.img} src={photo.src} alt={photo.title} />
       <div className={styles.details}>
         <div>
@@ -29,7 +30,7 @@ const PhotoContent = ({ data }: PhotoContentProps) => {
             <span className={styles.visualizations}>{photo.acessos}</span>
           </p>
           <h1 className="title">
-            <Link to={`/photo/${photo.id}`}>{photo.title}</Link>
+            <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
           </h1>
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>
@@ -37,7 +38,7 @@ const PhotoContent = ({ data }: PhotoContentProps) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </div>
   );
 };

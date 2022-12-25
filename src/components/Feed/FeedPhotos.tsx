@@ -7,7 +7,7 @@ import { Photo } from '../Photo/types';
 import styles from './FeedPhotos.module.scss';
 import FeedPhotosItem from './FeedPhotosItem';
 
-const TOTAL_PER_PAGE = 3;
+const TOTAL_PER_PAGE = 6;
 
 interface FeedPhotosProps {
   user: number;

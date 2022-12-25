@@ -10,6 +10,21 @@
   opacity: 0;
   transform: scale(0.8);
   animation: scaleUp 0.3s forwards;
+
+  & > section {
+    grid-row: 1 / 4;
+  }
+
+  &.single {
+    grid-template-columns: 1fr;
+    height: auto;
+
+    & > section {
+      grid-row: 1;
+      border-radius: 0.4rem;
+      overflow: hidden;
+    }
+  }
 }
 
 @keyframes scaleUp {
@@ -23,12 +38,8 @@
   padding: 2rem 2rem 0 2rem;
 }
 
-.img {
-  grid-row: 1 / 4;
-}
-
-.comments {
-  padding: 0 2rem;
+.single .details {
+  padding: 1rem 0px 0px 0px;
 }
 
 .author {
@@ -84,9 +95,13 @@
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
     grid-template-columns: minmax(20rem, 40rem);
-  }
 
-  .img {
-    grid-row: 1;
+    & > section {
+      grid-row: 1;
+    }
+
+    &.single {
+      max-height: initial;
+    }
   }
 }

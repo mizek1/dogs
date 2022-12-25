@@ -9,9 +9,14 @@ import { Comment } from './types';
 interface PhotoCommentsFormProps {
   id: number;
   setComments: React.Dispatch<React.SetStateAction<Comment[]>>;
+  single?: boolean;
 }
 
-const PhotoCommentsForm = ({ id, setComments }: PhotoCommentsFormProps) => {
+const PhotoCommentsForm = ({
+  id,
+  setComments,
+  single,
+}: PhotoCommentsFormProps) => {
   const { request, error } = useFetch();
   const [comment, setComment] = React.useState('');
 
@@ -30,7 +35,10 @@ const PhotoCommentsForm = ({ id, setComments }: PhotoCommentsFormProps) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${single ? styles.single : ''}`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         className={styles.textarea}
         placeholder="Comente..."
