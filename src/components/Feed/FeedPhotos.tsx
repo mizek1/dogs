@@ -21,7 +21,7 @@ const FeedPhotos = ({
         total: 6,
         user: 0,
       });
-      const { response, json } = await request(url, options);
+      await request(url, options);
     };
     fetchPhotos();
   }, [request]);
