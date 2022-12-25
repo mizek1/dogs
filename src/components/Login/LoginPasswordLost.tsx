@@ -20,7 +20,7 @@ const LoginPasswordLost = () => {
   };
 
   return (
-    <section>
+    <section className="animeLeft">
       <Head
         title="Esqueci a senha"
         description="Esqueceu a senha? Recupere aqui."
