@@ -10,7 +10,13 @@ export interface Photo {
   total_comments: string;
 }
 
+export interface Comment {
+  comment_ID: number;
+  comment_author: string;
+  comment_content: string;
+}
+
 export interface PhotoWithComments {
   photo: Photo;
-  comments: string[];
+  comments: Comment[];
 }
