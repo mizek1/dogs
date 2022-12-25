@@ -4,7 +4,7 @@ import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 
 interface FeedProps {
-  user?: number;
+  user?: number | string;
 }
 
 const Feed = ({ user }: FeedProps) => {

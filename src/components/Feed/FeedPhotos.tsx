@@ -10,7 +10,7 @@ import FeedPhotosItem from './FeedPhotosItem';
 const TOTAL_PER_PAGE = 6;
 
 interface FeedPhotosProps {
-  user: number;
+  user: number | string;
   page: number;
   setModalPhoto: React.Dispatch<React.SetStateAction<Photo | null>>;
   setInfinite: React.Dispatch<React.SetStateAction<boolean>>;

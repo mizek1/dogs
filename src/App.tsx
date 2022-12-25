@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Login from './components/Login/Login';
 import Photo from './components/Photo/Photo';
 import User from './components/User/User';
+import UserProfile from './components/User/UserProfile';
 import { UserStorage } from './UserContext';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               }
             />
             <Route path="foto/:id" element={<Photo />}></Route>
+            <Route path="perfil/:user" element={<UserProfile />}></Route>
           </Routes>
           <Footer />
         </UserStorage>
