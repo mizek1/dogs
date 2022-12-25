@@ -6,6 +6,7 @@ import useForm from '../../hooks/useForm';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import Error from '../Helpers/Error';
+import Head from '../Helpers/Head';
 import styles from './UserPhotoPost.module.scss';
 
 interface ImageType {
@@ -57,6 +58,7 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto" description="Poste sua foto" />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />

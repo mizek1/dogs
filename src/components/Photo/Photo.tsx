@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { PHOTO_GET } from '../../api';
 import useFetch from '../../hooks/useFetch';
 import Error from '../Helpers/Error';
+import Head from '../Helpers/Head';
 import Loading from '../Helpers/Loading';
 import PhotoContent from './PhotoContent';
 import { PhotoWithComments } from './types';
@@ -26,6 +27,7 @@ const Photo = () => {
   if (data)
     return (
       <section className="container mainContainer">
+        <Head title={data.photo.title} description="Página de foto." />
         <PhotoContent data={data} single={true} />
       </section>
     );

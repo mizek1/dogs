@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import UserContext from '../../UserContext';
+import Head from '../Helpers/Head';
 import NotFound from '../NotFound';
 import styles from './Login.module.scss';
 import LoginCreate from './LoginCreate';
@@ -17,6 +18,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
+      <Head title="Login" description="Página de login." />
       <div className={styles.forms}>
         <Routes>
           <Route path="/" element={<LoginForm />}></Route>

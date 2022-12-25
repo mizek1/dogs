@@ -4,6 +4,7 @@ import useForm from '../../hooks/useForm';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import Error from '../Helpers/Error';
+import Head from '../Helpers/Head';
 
 const LoginPasswordLost = () => {
   const login = useForm();
@@ -20,6 +21,11 @@ const LoginPasswordLost = () => {
 
   return (
     <section>
+      <Head
+        title="Esqueci a senha"
+        description="Esqueceu a senha? Recupere aqui."
+      />
+
       <h1 className="title">Perdeu a senha?</h1>
       {data ? (
         <p style={{ color: '#4c1' }}>{data}</p>
