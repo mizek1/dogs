@@ -1,12 +1,7 @@
 import React from 'react';
 import { VictoryBar, VictoryChart, VictoryPie } from 'victory';
+import { UserStatsData } from './UserStats';
 import styles from './UserStatsGraph.module.scss';
-
-export interface UserStatsData {
-  acessos: string;
-  id: number;
-  title: string;
-}
 
 interface UserStatsGraphProps {
   data: UserStatsData[];
