@@ -18,7 +18,7 @@ Também consegui praticar a criação de hooks, assim como tipagem das proprieda
 
 Ainda quero acrescentar as seguintes features ao longo do tempo:
 
-- [ ] Estatísticas;
+- [x] Estatísticas;
 - [ ] Temas (dark/light e cores);
 - [ ] Testes unitários;
 - [ ] Abstração de alguns padrões em design patterns.
